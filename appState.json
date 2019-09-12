@@ -1,0 +1,147 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "2dadd361-2b76-4eaf-94bd-2d69f559d619": {
+        "id": "2dadd361-2b76-4eaf-94bd-2d69f559d619",
+        "parent": null,
+        "name": "mlindunil",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "2cdb49b4-b95a-4325-a7c1-999e7a5eeaa9"
+        ],
+        "isRemovable": false,
+        "filePath": "mlindunil"
+      },
+      "2cdb49b4-b95a-4325-a7c1-999e7a5eeaa9": {
+        "id": "2cdb49b4-b95a-4325-a7c1-999e7a5eeaa9",
+        "parent": "2dadd361-2b76-4eaf-94bd-2d69f559d619",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "mlindunil/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    sns.getTopicAttributes({\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 301,
+          "memory": 1024,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "apigusEast1sachithraAPInameindunilany",
+            "config": {}
+          }
+        ],
+        "customSecurityPolicy": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:execute-api:us-east-1::///",
+              "Action": []
+            }
+          ]
+        }
+      }
+    },
+    "rootNode": "2dadd361-2b76-4eaf-94bd-2d69f559d619",
+    "openFiles": [
+      "2cdb49b4-b95a-4325-a7c1-999e7a5eeaa9"
+    ],
+    "currentFileId": "2cdb49b4-b95a-4325-a7c1-999e7a5eeaa9",
+    "resources": {
+      "apigusEast1sachithraAPInameindunilany": {
+        "name": "apigusEast1sachithraAPInameindunilany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 1,
+          "apiName": "sachithraAPIname",
+          "apiId": "052p9kjn18",
+          "endpointType": "REGIONAL",
+          "rootResourceId": "zrjp6rdv3b",
+          "existingResources": {
+            "/indunil": "gv2c1w",
+            "/indunil/qa/tst": "r6hp77",
+            "/indunil/qa": "yptvr5",
+            "/": "zrjp6rdv3b"
+          },
+          "resourceMode": 1,
+          "resourcePath": "/indunil",
+          "resourceName": "indunil",
+          "resourceId": "gv2c1w",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "test12",
+          "mode": 1
+        }
+      },
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": "CloudFormation",
+      "definitions": {
+        "Resources": {}
+      }
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "test": {
+          "name": "test",
+          "version": "0.6.0",
+          "language": "javascript"
+        },
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "mlindunil",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1568277028151
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "mlindunil",
+      "url": "https://github.com/Indunil1992/mlindunil"
+    }
+  }
+}
